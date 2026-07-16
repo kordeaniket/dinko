@@ -18,7 +18,7 @@ export default function Nav({ lang, setLang }) {
     <header className="sticky top-0 z-50 bg-navy/95 backdrop-blur border-b border-gold/20">
       <div className="overflow-hidden border-b border-gold/15 bg-[#07161e]">
         <div className="relative whitespace-nowrap py-2">
-          <div className="animate-marquee flex items-center gap-10 px-5 text-[13px] uppercase tracking-[0.3em] text-cream/75 sm:px-6">
+          <div className="animate-marquee flex items-center gap-8 px-4 text-[11px] uppercase tracking-[0.22em] text-cream/75 sm:px-6 sm:text-[13px]">
             <span>{tagline}</span>
             <span>{tagline}</span>
             <span>{tagline}</span>

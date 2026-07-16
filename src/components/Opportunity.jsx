@@ -50,7 +50,7 @@ export default function Opportunity({ lang }) {
         <p className="mt-4 text-ink/65">{copy.intro}</p>
       </Reveal>
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-12 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {audience.map(a => {
           const IconComp = Icon[a.icon];
           return (

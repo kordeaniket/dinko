@@ -56,7 +56,7 @@ export default function Services({ lang }) {
         <h2 className="font-display text-3xl text-navy md:text-4xl">{copy.heading}</h2>
         <p className="mt-4 text-ink/65">{copy.body}</p>
       </Reveal>
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
         {services.map((s) => <ServiceCard key={s.icon} s={s} lang={lang} />)}
       </div>
     </section>

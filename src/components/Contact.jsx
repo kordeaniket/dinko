@@ -35,7 +35,7 @@ export default function Contact({ lang }) {
       <Reveal className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#0b1f2a] shadow-[0_24px_60px_-24px_rgba(11,31,42,0.55)]">
         <div className="absolute inset-0" style={{ backgroundImage: "url('/contact-bg.svg')", backgroundSize: 'cover', backgroundPosition: 'center' }} aria-hidden="true" />
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(11,31,42,0.93),rgba(11,31,42,0.78))]" aria-hidden="true" />
-        <div className="relative grid gap-10 p-8 md:grid-cols-2 md:p-14 md:items-center">
+        <div className="relative grid gap-8 p-6 md:grid-cols-2 md:p-14 md:items-center">
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">{copy.eyebrow}</p>
             <h2 className="mb-4 font-display text-3xl text-cream md:text-4xl">{copy.heading}</h2>

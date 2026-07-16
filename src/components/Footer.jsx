@@ -7,7 +7,7 @@ export default function Footer({ lang }) {
 
   return (
     <footer className="border-t border-white/10 bg-navy-800 text-cream/70">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 py-10 text-sm md:flex-row md:items-center md:justify-between md:text-left">
         <a href="#top" className="flex items-center gap-2 rounded focus-ring">
           <svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
             <rect width="100" height="100" rx="20" fill="#C9A24B" />

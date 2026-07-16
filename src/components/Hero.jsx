@@ -37,20 +37,20 @@ export default function Hero({ lang }) {
           <p className="uppercase tracking-[0.35em] text-gold text-xs md:text-sm mb-5">{copy.eyebrow}</p>
         </Reveal>
         <Reveal>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.15] max-w-3xl">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] max-w-full sm:max-w-3xl">
             {copy.title[0]} <span className="text-gold">{copy.title[1]}</span> {copy.title[2]}
           </h1>
         </Reveal>
         <Reveal>
-          <p className="mt-6 text-cream/80 text-lg max-w-2xl">
+          <p className="mt-6 text-cream/80 text-base sm:text-lg max-w-full sm:max-w-2xl">
             {copy.desc}
           </p>
         </Reveal>
-        <Reveal className="mt-9 flex flex-wrap gap-4">
-          <a href={`tel:${PHONE_INTL}`} className="hero-cta inline-flex items-center gap-2 bg-gold text-navy font-semibold px-6 py-3.5 rounded-full hover:bg-gold-300 transition-colors focus-ring">
+        <Reveal className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <a href={`tel:${PHONE_INTL}`} className="hero-cta inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 font-semibold text-navy transition-colors hover:bg-gold-300 focus-ring sm:w-auto">
             <Icon.phone className="w-5 h-5" /> {copy.cta}
           </a>
-          <a href="#services" className="hero-secondary inline-flex items-center gap-2 border border-gold/50 text-cream px-6 py-3.5 rounded-full hover:border-gold hover:text-gold transition-colors focus-ring">
+          <a href="#services" className="hero-secondary inline-flex w-full items-center justify-center gap-2 rounded-full border border-gold/50 px-6 py-3.5 text-cream transition-colors hover:border-gold hover:text-gold focus-ring sm:w-auto">
             {copy.secondary}
           </a>
         </Reveal>

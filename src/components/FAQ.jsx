@@ -10,7 +10,7 @@ export default function FAQ({ lang }) {
 
   return (
     <section id="faq" className="bg-navy-800 text-cream">
-      <div className="max-w-3xl mx-auto px-5 py-16 md:py-24">
+      <div className="max-w-3xl mx-auto px-5 py-12 md:py-24">
         <Reveal className="text-center mb-12">
           <p className="text-gold font-semibold uppercase tracking-[0.3em] text-xs mb-3">{copy.eyebrow}</p>
           <h2 className="font-display text-3xl md:text-4xl">{copy.heading}</h2>
