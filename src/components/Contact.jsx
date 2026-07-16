@@ -47,7 +47,7 @@ export default function Contact({ lang }) {
                 </div>
                 <div>
                   <p className="font-semibold text-cream">{PHONE}</p>
-                  <p className="text-xs text-cream/50">दिनेश नामदेवराव कोर्डे · ME-EXTC</p>
+                  <p className="text-xs text-cream/50">दिनेश नामदेवराव कोरडे · ME-EXTC</p>
                 </div>
               </div>
             </div>
