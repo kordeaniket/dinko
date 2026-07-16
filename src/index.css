@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Mukta', sans-serif; background: #F7F4EC; color: #17202A; }
+.font-display { font-family: 'Tiro Devanagari Marathi', serif; }
+::selection { background: #C9A24B; color: #0B1F2A; }
+
+.lotus-divider { background-image: radial-gradient(circle, #C9A24B 1.5px, transparent 1.5px); background-size: 14px 14px; }
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@keyframes floatY {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -12px, 0); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(10px, -12px, 0) scale(1.03); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 75, 0.16); }
+  50% { box-shadow: 0 0 0 8px rgba(201, 162, 75, 0); }
+}
+
+.hero-ambient { animation: drift 10s ease-in-out infinite; }
+.hero-ambient--delay { animation-delay: 1.8s; }
+.hero-cta,
+.hero-secondary,
+.lang-switch,
+.nav-action { transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease; }
+.hero-cta:hover,
+.hero-secondary:hover,
+.lang-switch:hover,
+.nav-action:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -12px rgba(11, 31, 42, .35); }
+.hero-cta { animation: pulseGlow 3.2s ease-in-out infinite; }
+.stat-card { animation: floatY 6s ease-in-out infinite; }
+.stat-card:nth-child(2) { animation-delay: 1s; }
+.stat-card:nth-child(3) { animation-delay: 2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-ambient,
+  .hero-ambient--delay,
+  .hero-cta,
+  .stat-card,
+  .animate-marquee { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 20s linear infinite;
+}
+
+.card-hover { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+.card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -18px rgba(11,31,42,.35); }
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,162,75,.14), transparent 55%);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  background-image: var(--card-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.12;
+  transform: scale(1);
+  transition: opacity .35s ease, transform .35s ease, filter .35s ease;
+  filter: saturate(0.9);
+  pointer-events: none;
+  z-index: 0;
+}
+.service-card:hover::before { opacity: 1; }
+.service-card:hover::after {
+  opacity: 0.28;
+  transform: scale(1.06);
+  background-image: var(--card-image-hover, var(--card-image));
+}
+.service-card > * { position: relative; z-index: 1; }
+
+.about-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transform: translateY(0) scale(1);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+}
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,.16) 45%, transparent 75%);
+  transform: translateX(-140%);
+  transition: transform .7s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.about-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(201, 162, 75, 0.45);
+  box-shadow: 0 18px 36px -22px rgba(0, 0, 0, 0.45);
+}
+.about-card:hover::before { transform: translateX(140%); }
+.about-card__media {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 -50px 60px -40px rgba(11, 31, 42, 0.95);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+}
+.about-card:hover .about-card__media {
+  transform: scale(1.03);
+  filter: saturate(1.04);
+}
+.about-card__icon {
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+}
+.about-card:hover .about-card__icon {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 18px -10px rgba(201, 162, 75, 0.3);
+}
+.about-card > * { position: relative; z-index: 1; }
+
+.opportunity-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+}
+.opportunity-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.16) 45%, transparent 75%);
+  transform: translateX(-140%);
+  transition: transform .7s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.opportunity-card:hover {
+  transform: translateY(-4px) rotate(-0.5deg) scale(1.01);
+  border-color: rgba(201, 162, 75, 0.38);
+  box-shadow: 0 24px 44px -24px rgba(11,31,42,0.42);
+}
+.opportunity-card:hover::before { transform: translateX(140%); }
+.opportunity-card__media {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform .35s ease, filter .35s ease;
+}
+.opportunity-card:hover .opportunity-card__media {
+  transform: scale(1.04);
+  filter: saturate(1.05);
+}
+.opportunity-card__body {
+  transform: translateY(4px);
+  opacity: 0.92;
+  transition: transform .35s ease, opacity .35s ease;
+}
+.opportunity-card:hover .opportunity-card__body {
+  transform: translateY(0);
+  opacity: 1;
+}
+.feature-card {
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201, 162, 75, 0.3);
+  box-shadow: 0 18px 36px -24px rgba(11,31,42,0.35);
+}
+
+.focus-ring:focus-visible { outline: 3px solid #C9A24B; outline-offset: 3px; }
